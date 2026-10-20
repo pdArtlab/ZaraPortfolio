@@ -1,0 +1,904 @@
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+    General Font Sizes, Weights, Styling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+html {
+    font-family: mali, cursive;
+    font-weight: 400;
+}
+
+body {
+    margin: 0px;
+    font-size: 1rem;
+}
+
+
+.Mx-Wd-1200px {
+    max-width: 1200px;
+}
+
+
+h1 { font-size: 2.5rem }
+h2 { font-size: 1.5rem}
+h3 { font-size: 1.125rem}
+h4 { font-size: 1rem }
+h5 { font-size: 0.75}
+h6 { font-size: 0.625rem}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin: 0px;
+}
+
+
+p {
+    margin: 0px;
+}
+
+.btn-primary {
+    display: inline-block;          /*  <a> tag is an inline element by default. Set it to inline-block so the transform behaves more predictably. */
+    background-color: #fad200;
+    color: #4d4a48;
+    font-family: mali, cursive;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 20px 50px;
+    align-content: center;
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+
+    &:hover {
+    background-color: #faa500;
+    transform: scale(1.05, 1.05);
+    }
+}
+
+
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+        MASTER GRIDING
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+.master-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 50px;
+    height: 100vh;
+    height: 100dvh;  /* (Dynamic Viewport Height): Automatically resizes in real-time as mobile */
+
+    grid-template-areas:
+    'navigation'
+    'slider'
+    'welcome'
+    'post-welcome'
+    'play'
+    'section-pink'
+    'espr'
+    'section-blue'
+    'webinar'
+    'footer';
+}
+
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+            Navigation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.nav-grid-item {
+    grid-area: navigation;
+    background-color: #f1f7fa;
+
+    .nav-master-flex-100cent {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+
+.nav-flex-98percent-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 98%;
+    position: fixed;
+    top: 10px;
+    z-index: 4;
+    
+    background-color:#e9f2f7;
+    border-radius: 10px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease-in, transform 0.3s ease;
+    
+    /* box-shadow: 0px 4px 5px -1px #d5dbf593; */
+    /*   SHADOW PROPERTIES: 
+    0 (Offset-X): No horizontal shift. 
+    4px (Offset-Y): Moves the shadow 4 pixels down
+    5px (Blur-Radius): Softens the shadow. The shadow edges fade out over a 6-pixel gradient, making it look smooth rather than harsh.
+    -1px (Spread-Radius): Shrinks the shadow footprint by 1 pixel on all sides. This is a critical design trick that keeps the shadow tucked tightly under the element, preventing it from looking muddy or bleeding out from the sides
+    */
+}
+
+
+.ul-flexbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 40px;
+    
+}
+
+.ul-flexbox li a {
+    text-decoration: none;
+    color: #32355d;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 25px;
+    
+    
+}
+
+.logo-text {
+    font-weight:600;
+    font-size: 18px;
+    color: #32355d;
+
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: row;
+    gap: 03px;
+    margin-right: 40px;
+}
+
+.nav-round-lg {
+    width: 15px;
+    height: 5px;
+    background-color:#cbcce0;
+    border-radius: 10px;
+}
+
+.nav-round-sm {
+    width: 08px;
+    height: 5px;
+    background-color:#cbcce0;
+    border-radius: 10px;
+}
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+                Slider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.slider-grid-item {
+    grid-area: slider;
+    background-color: #f1f7fa;
+
+    .slider-master-flex-100cent {
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        width: 100%;
+        justify-content: center;
+
+            .slider-flex-1200px-row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                /* First Max-width:1200px(separate ID) then width:100%  this will stretch container to 100% of 1200px max width*/
+                padding: 50px 40px 20px 40px;
+                /* TRBL (Top, Right, Bottom, Left */
+                }            
+                    @media (max-width: 1000px) {
+                        .slider-flex-1200px-row {
+                            justify-content: center;
+                        }
+                    }
+    }
+}
+
+
+
+.hero-txt-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    flex: 1 1 250px;
+    height: auto;
+    margin-bottom: 100px;
+
+        h2 {
+            font-size: 5rem;
+            font-weight: 500;
+            color: #65c4bc;
+            margin-bottom: -70px;
+            z-index: 1;
+            width: fit-content;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }          
+        }
+
+        h1 {
+            font-size: 6rem;
+            font-weight: 900;
+            color: #32355d;
+        }
+
+        p {
+            font-size: 1.4rem;
+            color: #615c59;
+            margin-left: 10px;
+        }
+
+
+            @media (max-width: 750px) {
+                /* Following 2 lines targets the main .hero-txt-wrapper, we dont need to declare media query after closing tag of .text-hero-wrapper */
+                width: fit-content;             
+                max-width: fit-content;
+            
+                h2 {
+                    font-size: 3rem;
+                    margin-bottom: -40px;
+                }
+                
+                h1 {
+                    font-size: 4rem;
+                }
+                
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+}
+
+.btn-wraper {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-btn-discover {
+    background-color: #fad200;
+    color: #4d4a48;
+    font-family: mali, cursive;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 20px 50px;
+    align-content: center;
+    
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    margin-top: 30px;
+
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    
+}
+
+.hero-btn-discover:hover {
+    background-color: #faa500;
+    transform:scale(1.05, 1.05);
+}
+
+.hero-btn-gallery {
+    background-color: #65c4bc;
+    color: #4d4a48;
+    font-family: mali, cursive;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 20px 40px;
+    align-content: center;
+    
+    
+    border-radius: 50px;
+    border: none;
+    text-decoration: none;
+    margin-top: 30px;
+    
+    transition: background-color 0.5s ease, transform 0.3s ease;
+
+}
+
+.hero-btn-gallery:hover {
+    background-color: #4ea79f;
+    transform:scale(1.05, 1.05);
+}
+
+
+.hero-img-container {
+    display: flex;
+    position: relative;
+    
+    max-width: 640px;
+    flex: 1 1 500px;  /* Grow, shrink, and set a preferred base width of 500px */
+    height:auto;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.hero-img-container:hover {
+    transform: translateX(10px);
+}
+
+
+.hero-svg {
+    width: 100%;
+    z-index: 1;
+    
+}
+
+
+#cloud-left {
+    width: 170px;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    top: 100px;
+    left: -100px;
+    transition: all 1s ease, transform 1s ease;
+}
+
+@media (max-width: 750px) {#cloud-left {width: 140px;}}
+
+#cloud-right {
+    width: 210px;
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    bottom: 80px;
+    right: 60px;
+    transition: all 1s ease, transform 1s ease;
+}
+@media (max-width: 750px) {#cloud-right {width: 160px;}}
+
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+                Welcome
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.welcome-grid-item {
+    grid-area: welcome;
+    background-color: #ffffff;
+    
+
+}
+
+.transition-flex {
+    display: flex;
+    background-image: url(./Assets/Website-Assets/Graphics-illustrations/cloudsTransition.svg);
+    height: 160px;
+    margin-top: -160px;
+    overflow: hidden;
+    background-position: top;
+
+}
+
+.welcome-flex-1200px-row {
+    display: flex;
+    min-height: 250px;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    width: 100%;
+    /* First Max-width:1200px(separate ID) then width:100%  this will stretch container to 100% of 1200px max width*/
+}
+
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 100px;
+    padding: 10px;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.welcome-text h2 {
+    color: #65c4bc;
+    font-size: 2rem;
+    margin-bottom: -22px;
+    text-align: center;
+}
+
+.welcome-text h1 {
+    color: #32355d;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.welcome-text p {
+    color: #828282;
+    padding: 20px 0px;
+    text-align: center;
+}
+
+#car-welcome {
+    display: flex;
+    justify-self:right;
+    margin-top: -50px;
+    margin-right: 50px;
+    z-index: 0;
+    
+}
+
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+                Post-Welcome
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.post-welcome-grid-item {
+    grid-area: post-welcome;
+    background-color: #ffffff;
+    
+    margin: 0px 0px 50px 0px;
+
+}
+
+.post-welcome-flex-1200px-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-self: center;
+    align-items: start;
+    gap: 50px;
+    width: 100%;
+    /* First Max-width:1200px(separate ID) then width:100%  this will stretch container to 100% of 1200px max width*/
+}
+
+.pw-r1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 60px;
+}
+
+.PW-card-GC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+    max-width: 200px;
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+    
+}
+
+.PW-card-GC::before {
+    content: "";
+    
+    width: 110%;
+    height: 110%;
+    /* inset: 0 makes the::before element fill the entire .box. inset is a CSS shorthand property for positioning an element from its four sides: top, right, bottom, and left. */
+    top: -20px;
+    left: -20px;
+    position: absolute;
+    border-radius: 70px 100px 70px 100px;
+    transform: rotate(08deg);
+    background-color: #f9f9f9;
+    z-index: 0;
+    opacity: 0;;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.PW-card-GC:hover::before {
+    opacity: 1;
+    ;
+}
+
+.PW-card-GC::after {
+    content: "";
+    inset: 0;
+    /* inset: 0 makes the::before element fill the entire .box. inset is a CSS shorthand property for positioning an element from its four sides: top, right, bottom, and left. */
+    z-index: 1;
+    position: absolute;
+    border-radius: 70px 100px 70px 100px;
+    transform: rotate(08deg);
+    border: 1px solid #ebebeb;
+    background-color: #ffffff;
+    
+}
+
+
+
+.PW-card1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+
+        h3 {
+            color: #32355d;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #828282;
+            padding: 10px;
+            transition: all 0.5s ease, transform 0.3s ease;
+
+                &:hover {
+                    color: #65c4bc;
+                }
+        }
+}
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+             Play Section
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.play-grid-item {
+    grid-area: play;
+    place-items: center;
+
+}
+
+.play-section-flex-100cent {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #fbfaf2;
+    height: auto;
+    width: 95%;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.play-section-flex-1200px {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin:80px 30px 80px 30px ;
+
+    @media (max-width: 750px) {
+        justify-content: center;
+    }
+
+
+
+}
+
+.left-ct {
+    max-width: 500px;
+
+    a {
+        margin-top: 30px;
+    }
+
+    h2 {
+        color: #828282;
+        font-weight: 400;
+        margin-bottom: -22px;
+    }
+
+
+    h1 {
+        color: #8dc8ae;
+        font-weight: 900;
+
+        span {
+            color: #444444;
+        }
+
+        span + span {
+            color: #f37647;
+        }
+    }
+
+    p {
+    color: #616161;
+    font-weight: 400;
+    }
+    
+    @media (max-width: 750px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+            Pink Section
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.pinksect-grid-item {
+    grid-area: section-pink;
+    margin-top: 50px;
+}
+
+.pinksect-master-flex-100cent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.pinksect-card-flex-100cent {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    background-color:#29334d;
+
+    height: 1200px;
+    /* border-radius: 12rem 12rem 0rem 0rem; */
+    padding: 120px 0px 120px 0px;    
+    transition: all 1s ease, transform 1s ease;
+}
+
+
+.pinksect-flex-1200px-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+
+    justify-content:center;
+    align-items:start;
+
+    gap: 50px;
+    height: 100%;
+    width:100%; /* First Max-width:1200px(separate ID) then width:100%  this will stretch container to 100% of 1200px max width*/
+    
+}
+
+.left-sticky {
+    padding: 20px;
+    position: sticky;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+    max-width: 400px;
+    color: #d5dbf5;
+
+}
+
+.left-sticky p {
+    color: #94b0c5;
+
+}
+
+.right-non-sticky {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 50px;
+    position: relative;
+    flex: 1 1 200px;
+    
+    
+
+ }
+
+.nonsticky-GC {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.nonsticky-GC .NS-preheading {
+    color: #e1edf6;
+    padding: 10px 0px 0px 0px;
+    border-top: 1px solid rgba(59, 131, 246, 0.411);
+    margin-bottom: 30px;
+}
+
+.NS-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nonsticky-GC h2 {
+    color: #e1edf6;
+
+}
+
+.nonsticky-GC p {
+    color: #94b0c5;
+}
+
+.nonsticky-GC li {
+    color: #e1edf6;
+    padding: 5px 15px 5px 15px ;
+    background-color: #3e739b;
+    font-size: 0.8rem;
+    margin-top: 20px;
+}
+
+
+
+.NS-preheading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.NS-UL-TAGS {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    gap: 10px;
+
+}
+
+
+
+
+.gallery-grid-item {
+    background-color:#e1edf6;
+    height: 700px;
+    grid-area: gallery;
+    
+}
+
+.bluesect-grid-item {
+    background-color:#b6d5ea;
+    height: 400px;
+    grid-area: section-blue;    
+}
+
+.webinar-grid-item {
+    background-color:#fff4ee;
+    height: 400px;
+    grid-area: webinar;
+    
+}
+
+.footer-grid-item {
+    background-color:yellow;
+    height: 40px;
+    grid-area: footer;
+    
+}
+
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+                ESPR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.espr-grid-item {
+    grid-area: espr;
+}
+
+
+.espr-master-flex-100cent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff;
+
+}
+
+.espr-flex-1200px-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 250px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* First Max-width:1200px(separate ID) then width:100%  this will stretch container to 100% of 1200px max width*/
+
+}
+
+.circles-espr {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+
+
+}
+
+.circle-General {
+    width: 75px;
+    height: 75px;
+    border-radius: 30px 40px 30px 40px;
+    transform: rotate(15deg);
+    outline-offset: 4px;
+}
+
+.circle1 {
+    background-color: #d5dbf5;
+    margin-right: -30px;
+}
+
+.circle2 {
+    background-color: #fdadc2;
+    margin-right: -30px;
+}
+
+.circle3 {
+    background-color: #fadc92;
+    margin-right: -30px;
+}
+
+.circle4 {
+    background-color: #7ca3b3;
+}
+
+
+.circleText {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+    max-width: 850px;
+    padding: 30px;
+}
+
+.circleText h2 {
+    color: #65c4bc;
+    font-size: 2rem;
+    margin-bottom: -22px;
+}
+
+.circleText h1 {
+    color: #32355d;
+    font-weight: bolder;
+}
+
+.circleText p {
+    color: #828282;
+    padding: 20px 0px;
+}
