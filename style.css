@@ -98,6 +98,7 @@ p {
         flex-direction: row;
         position: relative;
         width: 100%;
+        height: 100%;
         justify-content: center;
     }
 }
@@ -127,6 +128,14 @@ p {
     5px (Blur-Radius): Softens the shadow. The shadow edges fade out over a 6-pixel gradient, making it look smooth rather than harsh.
     -1px (Spread-Radius): Shrinks the shadow footprint by 1 pixel on all sides. This is a critical design trick that keeps the shadow tucked tightly under the element, preventing it from looking muddy or bleeding out from the sides
     */
+
+}
+
+.navlinks {
+
+    @media (max-width: 750px) {
+            display: none;
+    }
 }
 
 
@@ -156,6 +165,10 @@ p {
     margin: 0px;
     gap: 10px;
     align-items: center;
+
+    @media (max-width: 750px) {
+            margin-left: 40px;
+    }
 }
 
 .logo-icon {
