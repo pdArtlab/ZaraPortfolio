@@ -234,6 +234,7 @@ p {
                     @media (max-width: 1000px) {
                         .slider-flex-1200px-row {
                             justify-content: center;
+                            
                         }
                     }
     }
@@ -279,6 +280,8 @@ p {
                 /* Following 2 lines targets the main .hero-txt-wrapper, we dont need to declare media query after closing tag of .text-hero-wrapper */
                 width: fit-content;             
                 max-width: fit-content;
+                margin-bottom: 50px;
+                
             
                 h2 {
                     font-size: 3rem;
@@ -292,6 +295,10 @@ p {
                 p {
                     font-size: 1.2rem;
                 }
+            }
+
+            @media (max-width: 937px) {
+                margin-bottom: 40px;
             }
 }
 
@@ -357,16 +364,30 @@ p {
     height:auto;
     transition: transform 0.5s ease;
     z-index: 1;
+
+        @media (max-width: 937px) {
+            justify-content: center;
+        
+        }
+
 }
 
 .hero-img-container:hover {
     transform: translateX(10px);
+
+        
 }
 
 
 .hero-svg {
     width: 100%;
     z-index: 1;
+
+        @media (max-width: 937px) {
+                width: 400px;
+        
+            }
+        
     
 }
 
@@ -380,9 +401,17 @@ p {
     top: 100px;
     left: -100px;
     transition: all 1s ease, transform 1s ease;
+
+        @media (max-width: 750px) {
+            width: 140px;     
+        }
+
+        @media (max-width: 937px) {
+            left: -40px;
+        }
 }
 
-@media (max-width: 750px) {#cloud-left {width: 140px;}}
+
 
 #cloud-right {
     width: 210px;
@@ -393,8 +422,18 @@ p {
     bottom: 80px;
     right: 60px;
     transition: all 1s ease, transform 1s ease;
+
+        @media (max-width: 750px) {
+                width: 160px;
+            }
+
+        @media (max-width: 937px) {
+                right: 30px;
+            }
+
+
 }
-@media (max-width: 750px) {#cloud-right {width: 160px;}}
+
 
 
 /*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
